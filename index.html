@@ -115,6 +115,26 @@ h3.p-title{font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.6vw,36px);ma
   background:linear-gradient(transparent,rgba(0,0,0,.55));padding:22px 0 8px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .chip{font-size:12px;color:var(--gold-d);border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:var(--card)}
+/* 입점·판매 증거 캡처 */
+.proof{margin-top:20px}
+.proof .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.proof img{width:100%;display:block;border:0;border-radius:0}
+.proof-cap{margin:12px 2px 0;font-size:13.5px;color:var(--ink2);line-height:1.75}
+.proof-cap b{color:var(--ink)}
+/* side project · Myquence */
+.side-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start;margin-top:26px}
+.side-grid p{font-size:15px;color:var(--ink2);line-height:1.85;margin:0 0 14px}
+.side-grid p b{color:var(--ink)}
+.side-lead{font-size:16.5px}
+.side-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.side-shots .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.side-shots img{width:100%;aspect-ratio:375/667;object-fit:cover;display:block;border:0;border-radius:0}
+.side-cta{margin-top:20px;padding:16px 18px;background:var(--card);border:1px solid var(--line);
+  border-left:4px solid var(--gold);border-radius:10px}
+.side-link{display:inline-block;font-weight:700;font-size:14.5px;color:var(--gold-d);text-decoration:none}
+.side-link:hover{text-decoration:underline}
+.side-note{margin:8px 0 0!important;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.side-grid{grid-template-columns:1fr;gap:28px}}
 /* motion / 영상 파트 */
 .motion{border-top:1px solid var(--line);padding:70px 0}
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
@@ -297,7 +317,7 @@ body.editing .hero-img-btn{display:inline-block}
   </div>
   <nav class="navlinks">
     <a href="#about">소개</a><a href="#ops">운영</a><a href="#p1">COLOR BY NUMBER</a><a href="#p2">SAVE A DOG</a>
-    <a href="#p3">herewhere</a><a href="#p4">상세페이지</a><a href="#p5">브랜드·VMD</a><a href="#motion">영상</a><a href="#p6">AI 워크플로</a><a href="#more">그 외 작업</a>
+    <a href="#p3">herewhere</a><a href="#p4">상세페이지</a><a href="#p5">브랜드·VMD</a><a href="#motion">영상</a><a href="#p6">AI 워크플로</a><a href="#more">그 외 작업</a><a href="#side">사이드 프로젝트</a>
   </nav>
   <div class="tools">
     <button class="btn" id="themeBtn" type="button" title="다크/라이트 모드 전환 (단축키: D)" aria-pressed="false">
@@ -485,6 +505,8 @@ body.editing .hero-img-btn{display:inline-block}
         <b>SAVE A DOG</b>를 Etsy·Amazon 등 해외 마켓과 USPTO 상표 등록까지 끌고 간 경험이 강점입니다.</p>
         <p data-edit>무엇보다 쇼핑몰 <b>모델 촬영과 디테일(제품) 촬영</b>을 직접 진행하고, <b>사이트 운영·리뉴얼, 고객관리(CS), 주문관리, 배송</b>까지
         온라인 스토어 운영의 처음부터 끝까지를 도맡아 온, 실무 커버리지가 넓은 올라운더입니다.</p>
+        <p data-edit>운영 툴은 <b>사방넷</b>(주문·재고 통합관리), <b>카페24</b>·<b>아임웹</b>(자사몰 구축·운영),
+        <b>무신사</b>(입점·상품 등록·판매 관리)를 실무로 사용했습니다. 새로운 채널이나 솔루션이 붙어도 빠르게 적응합니다.</p>
         <div class="tags">
           <span class="tag" data-edit>브랜드 기획·네이밍</span><span class="tag" data-edit>로고·CI/BI</span>
           <span class="tag" data-edit>Photoshop · Illustrator</span><span class="tag" data-edit>상세페이지·촬영 디렉션</span>
@@ -493,6 +515,8 @@ body.editing .hero-img-btn{display:inline-block}
           <span class="tag" data-edit>퍼포먼스·CRM</span><span class="tag" data-edit>글로벌 마켓(Etsy·Amazon)</span>
           <span class="tag" data-edit>모델·디테일 촬영</span><span class="tag" data-edit>쇼핑몰 운영·리뉴얼</span>
           <span class="tag" data-edit>고객관리(CS)</span><span class="tag" data-edit>주문·배송 관리</span>
+          <span class="tag" data-edit>사방넷</span><span class="tag" data-edit>카페24</span>
+          <span class="tag" data-edit>아임웹</span><span class="tag" data-edit>무신사 입점·운영</span>
           <span class="tag" data-edit>Claude Code</span><span class="tag" data-edit>HTML/CSS</span><span class="tag" data-edit>업무 자동화 스크립트</span>
         </div>
       </div>
@@ -594,14 +618,21 @@ body.editing .hero-img-btn{display:inline-block}
         <p data-edit>작가(존 보이드 등)와 협업한 캐릭터·그래픽을 중심으로 한 브랜드를 기획하고, 국내를 넘어
         <b>Etsy와 Amazon 등 글로벌 마켓</b>에 런칭했습니다. 캐릭터 스티커·배너·화가 소개 등 마켓별 콘텐츠를 제작하고,
         아마존 계정 등록과 리스팅까지 실무로 진행했습니다.</p>
+        <p data-edit>국내에서는 <b>무신사 입점에 성공</b>해, 입점 제안·서류 제출부터 상품 등록·콘텐츠 제작·판매 관리까지
+        <b>전 과정에 참여</b>했습니다.</p>
         <p data-edit>브랜드 보호를 위해 <b>USPTO(미국 특허상표청) 디자인 상표 출원</b>까지 처리했고, 수익 일부를 유기견·유기묘 구조에 기부하는
         브랜드 스토리(HUG&amp;HUB)를 함께 설계했습니다.</p>
-        <div class="chips"><span class="chip" data-edit>아티스트 협업</span><span class="chip" data-edit>Etsy · Amazon</span><span class="chip" data-edit>USPTO 상표 등록</span><span class="chip" data-edit>브랜드 스토리</span></div>
+        <div class="chips"><span class="chip" data-edit>아티스트 협업</span><span class="chip" data-edit>Etsy · Amazon</span><span class="chip" data-edit>무신사 입점</span><span class="chip" data-edit>USPTO 상표 등록</span><span class="chip" data-edit>브랜드 스토리</span></div>
       </div>
     </div>
     <div class="gal g2 feature-full">
       <div class="frame square"><img src="images/sad_save.jpg" data-key="sad_save" class="editable-img " loading="lazy" alt=""></div>
       <div class="frame square"><img src="images/sad_broc1.jpg" data-key="sad_broc1" class="editable-img " loading="lazy" alt=""></div>
+    </div>
+    <div class="proof">
+      <div class="frame"><img src="images/sad_musinsa.jpg" data-key="sad_musinsa" class="editable-img" loading="lazy" alt="무신사 SAVE A DOG 브랜드관"></div>
+      <p class="proof-cap" data-edit><b>무신사 SAVE A DOG 브랜드관</b> — 입점 제안·서류부터 상품 등록·콘텐츠 제작까지 직접 진행해
+      현재 <b>32개 상품</b>을 판매 중입니다. 상세페이지에 쓰인 캐릭터 그래픽은 위 아트워크에서 이어집니다.</p>
     </div>
   </article>
 
@@ -681,26 +712,28 @@ body.editing .hero-img-btn{display:inline-block}
   <section class="motion" id="motion">
     <p class="eyebrow" data-edit>Motion</p>
     <h2 class="sec serif" data-edit>정지된 이미지에서 멈추지 않습니다</h2>
-    <p class="sec-sub" data-edit>매장 TV·SNS에 나가는 브랜드 영상을 촬영 소스 정리부터 컷 편집 · 자막 · 색보정까지
-    <b>동영상 편집 완성까지 직접</b> 처리합니다. 디자인과 영상이 하나의 톤으로 이어지도록 같은 손으로 만듭니다.</p>
+    <p class="sec-sub" data-edit>매장 TV·매장 앞 디스플레이에 상영하는 브랜드 영상을 촬영 소스 정리부터 컷 편집 · 자막 · 색보정까지
+    <b>동영상 편집 완성까지 직접</b> 처리하고, <b>같은 소스를 인스타그램 릴스로 재편집</b>해 온·오프라인에 함께 썼습니다.
+    디자인과 영상이 하나의 톤으로 이어지도록 같은 손으로 만듭니다.</p>
     <div class="vgrid">
       <div class="vcard">
         <video src="video/vmd_christmas.mp4" poster="video/vmd_christmas.jpg"
                autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap" data-edit><b>크리스마스 시즌 영상</b>동부산점 시즌 VMD·매장 송출</div>
+        <div class="vcap" data-edit><b>크리스마스 시즌 영상</b>동부산점 시즌 VMD · 매장 송출</div>
       </div>
       <div class="vcard">
         <video src="video/vmd_tv.mp4" poster="video/vmd_tv.jpg"
                autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap" data-edit><b>25FW 신상 티저</b>매장 TV 송출용 시즌 오프닝</div>
+        <div class="vcap" data-edit><b>25FW 신상 티저</b>매장 TV 송출 · 시즌 오프닝</div>
       </div>
       <div class="vcard">
         <video src="video/vmd_pop.mp4" poster="video/vmd_pop.jpg"
                autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap" data-edit><b>브랜드 무드 영상</b>‘Beauty is not enough’ 키비주얼</div>
+        <div class="vcap" data-edit><b>브랜드 무드 영상</b>매장 앞 디스플레이 DP · ‘Beauty is not enough’</div>
       </div>
     </div>
-    <p class="vnote" data-edit>※ 자동 재생 · 무음 · 반복 재생. 원본 138MB를 웹 재생용으로 직접 인코딩해 6.8MB로 압축했습니다.</p>
+    <p class="vnote" data-edit>※ 세 편 모두 매장 상영본과 SNS·릴스용을 하나의 촬영 소스에서 각각 편집해 활용했습니다.
+    자동 재생 · 무음 · 반복 재생.</p>
   </section>
 
   <!-- P6 AI WORKFLOW -->
@@ -753,6 +786,51 @@ body.editing .hero-img-btn{display:inline-block}
       <div class="mini"><div class="ph"><img src="images/sad_broc.jpg" data-key="sad_broc" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>그래픽 아트워크</h4><p data-edit>SAVE A DOG 캐릭터</p></div></div>
       <div class="mini"><div class="ph"><img src="images/award_invitation.jpg" data-key="award_invitation" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>PARSONS AWARDS</h4><p data-edit>사내 시상식 초대장·포스터</p></div></div>
       <div class="mini"><div class="ph"><img src="images/award_invitation2.jpg" data-key="award_invitation2" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시상식 브랜딩</h4><p data-edit>상장·명단 판넬 · 4회 진행</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIDE PROJECT · Myquence -->
+<section class="block" id="side">
+  <div class="wrap">
+    <p class="eyebrow" data-edit>Side Project</p>
+    <h2 class="sec serif" data-edit>필요해서, 직접 만들었습니다</h2>
+    <p class="sec-sub" data-edit>기획부터 배포까지 혼자 밟은 첫 서비스 — <b>Myquence</b></p>
+
+    <div class="side-grid">
+      <div>
+        <p class="side-lead" data-edit>쓰던 할일 앱이 저에게 맞지 않았습니다. <b>캘린더는 완료 개념이 없어</b> 지난주를 봐도
+        한 일인지 못 한 일인지 알 수 없었고, <b>노션·Todoist는 여는 것부터 무거웠습니다.</b>
+        30초 안에 적어야 하는데 그 시간을 앱 여는 데 썼습니다.</p>
+
+        <p data-edit>그래서 <b>날짜 감각과 완료 체크를 한 화면에</b> 두는 앱을 직접 만들었습니다.
+        직장·개인·가족처럼 하루에 뒤섞이는 영역을 색으로 나누고, 월간 달력 위에서 여러 날에 걸친 할일까지 함께 관리합니다.</p>
+
+        <p data-edit>개발자는 아닙니다. <b>바이브 코딩</b>으로 만들었습니다. 대신 <b>요구사항 정의 · 페르소나 · 사용 시나리오 ·
+        차별화 전략 · 화면 설계 · 아키텍처 · 구현 계획</b>을 문서로 먼저 쓰고 들어갔습니다.
+        “무엇을 만들지”를 정하는 일은 결국 사람의 몫이고, 그건 <b>기획하고 운영해 본 사람이 잘하는 일</b>입니다.</p>
+
+        <p data-edit>가장 중요한 판단은 <b>이탈 원인이 성취감 부족이 아니라 입력 마찰</b>이라고 본 것이었습니다.
+        그래서 스트릭·포인트·뱃지 같은 보상 장치를 전부 버리고 <b>입력을 3탭·3초로 줄이는 데</b> 예산을 몰았습니다.</p>
+
+        <div class="chips" style="margin-top:14px">
+          <span class="chip" data-edit>Next.js</span><span class="chip" data-edit>React</span>
+          <span class="chip" data-edit>TypeScript</span><span class="chip" data-edit>Tailwind CSS</span>
+          <span class="chip" data-edit>Supabase</span><span class="chip" data-edit>PWA</span>
+        </div>
+
+        <div class="side-cta">
+          <a class="side-link" href="https://todo-app-two-jet-82.vercel.app" target="_blank" rel="noopener">
+            ▶ 직접 사용해 보기 — 가입 없이 바로</a>
+          <p class="side-note" data-edit>웹으로 배포해 <b>실제로 매일 쓰고 있으며</b>, 다음 단계로 <b>앱스토어 · 플레이스토어 출시</b>를 준비 중입니다.</p>
+        </div>
+      </div>
+
+      <div class="side-shots">
+        <div class="frame"><img src="images/mq_light.png" data-key="mq_light" class="editable-img" loading="lazy" alt="Myquence 달력 화면"></div>
+        <div class="frame"><img src="images/mq_palette.png" data-key="mq_palette" class="editable-img" loading="lazy" alt="Myquence 카테고리 색 팔레트"></div>
+        <div class="frame"><img src="images/mq_dark.png" data-key="mq_dark" class="editable-img" loading="lazy" alt="Myquence 다크 모드"></div>
+      </div>
     </div>
   </div>
 </section>
