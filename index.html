@@ -99,6 +99,13 @@ h3.p-title{font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.6vw,36px);ma
 .p-role b{color:var(--ink2);font-weight:600}
 .p-body{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
 .p-body p{font-size:15px;color:var(--ink2);margin:0 0 14px}
+/* 프로젝트 공통 구조: 문제 · 역할 · 실행 · 성과 */
+.p-struct{display:grid;gap:11px;margin:0 0 16px}
+.p-struct .row{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}
+.p-struct .k{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gold-d);padding-top:4px;white-space:nowrap}
+.p-struct .v{font-size:15px;color:var(--ink2);line-height:1.72;margin:0}
+.p-struct .v b{color:var(--ink)}
+@media(max-width:600px){.p-struct .row{grid-template-columns:1fr;gap:3px}.p-struct .k{padding-top:0}}
 @media(max-width:820px){.p-body{grid-template-columns:1fr}}
 .gal{display:grid;gap:12px}
 .gal.g2{grid-template-columns:1fr 1fr}
@@ -160,6 +167,15 @@ h3.p-title{font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.6vw,36px);ma
 .bw:hover{transform:translateY(-3px);box-shadow:0 16px 34px -20px var(--shadow)}
 .bw img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:820px){.brand-wall{grid-template-columns:1fr}}
+/* selected works — 대표 프로젝트보다 한 단계 낮은 위계 */
+.sw{display:grid;gap:34px;margin:10px 0 46px}
+.sw-item{border-top:1px solid var(--line);padding-top:26px}
+.sw-txt h3{font-family:'Noto Serif KR',serif;font-size:clamp(19px,2.2vw,24px);font-weight:700;margin:0 0 10px;line-height:1.25}
+.sw-txt p{font-size:14.5px;color:var(--ink2);line-height:1.75;margin:0 0 12px;max-width:900px}
+.sw-item .gal,.sw-item .vgrid,.sw-item .p-body{margin-top:18px}
+.sw-item .vgrid{grid-template-columns:repeat(3,1fr)}
+.sw-mini-head{font-size:15px;font-weight:700;color:var(--muted);margin:0 0 16px;padding-top:26px;border-top:1px solid var(--line)}
+@media(max-width:820px){.sw-item .vgrid{grid-template-columns:1fr}}
 .mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:980px){.mini-grid{grid-template-columns:repeat(2,1fr)}}
 .mini{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.2s}
@@ -261,7 +277,10 @@ body.on-cover .navlinks{display:none}
 .kw-row{display:flex;flex-wrap:wrap;gap:9px;margin:4px 0 6px}
 .kw{font-size:13px;font-weight:600;color:var(--ink2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px}
 .kw.gold{color:#fff;background:var(--gold);border-color:var(--gold)}
-.cover-head .who{margin-top:24px}
+.cover-head .who{margin-top:18px}
+.cover-nums{display:flex;flex-wrap:wrap;gap:6px 22px;margin:22px 0 0;padding:16px 0 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.cover-nums span{white-space:nowrap}
+.cover-nums b{font-family:'Noto Serif KR',serif;font-size:17px;color:var(--gold-d);font-weight:700;margin-right:5px}
 .port-divider{display:flex;align-items:center;gap:18px;padding:56px 0 10px;border-top:1px solid var(--line);margin-top:20px;scroll-margin-top:76px}
 #page-cover{scroll-margin-top:70px}
 #page-portfolio{scroll-margin-top:70px}
@@ -321,7 +340,7 @@ body.editing .hero-img-btn{display:inline-block}
   </div>
   <nav class="navlinks">
     <a href="#about">소개</a><a href="#ops">운영</a><a href="#p1">COLOR BY NUMBER</a><a href="#p2">SAVE A DOG</a>
-    <a href="#p3">herewhere</a><a href="#p4">상세페이지</a><a href="#p5">브랜드·VMD</a><a href="#motion">영상</a><a href="#p6">AI 워크플로</a><a href="#more">그 외 작업</a><a href="#side">사이드 프로젝트</a>
+    <a href="#p3">상세페이지</a><a href="#p4">AI 자동화</a><a href="#side">Myquence</a><a href="#more">그 외 작업</a>
   </nav>
   <div class="tools">
     <button class="btn" id="themeBtn" type="button" title="다크/라이트 모드 전환 (단축키: D)" aria-pressed="false">
@@ -337,24 +356,28 @@ body.editing .hero-img-btn{display:inline-block}
   <div class="cover-wrap">
     <div class="cover-head">
       <p class="eyebrow" data-edit>Cover Letter · 자기소개서</p>
-      <h1 data-edit>안녕하세요,<br>브랜드 운영을 이해하는 웹디자이너 <span class="hl">박서현</span>입니다.</h1>
-      <p class="intro-lead" data-edit>웹디자인을 기반으로 <b>온라인 쇼핑몰 운영, 상세페이지 제작, 상품 등록, 브랜드 콘텐츠 제작, 패키지·부자재 관리</b>까지
-      다양한 업무를 수행하며 <b>디자인과 운영을 함께</b> 경험해 왔습니다.</p>
-      <p class="intro-sub" data-edit>단순히 디자인 결과물을 만드는 데 그치지 않고 업무 프로세스와 운영 효율까지 함께 고민합니다.
-      문제를 발견하면 원인을 분석해 개선 방안을 제안하고, 변화하는 환경에도 빠르게 적응해 안정적으로 업무를 수행하는 것이 강점입니다.
-      꼼꼼한 책임감과 협업 능력을 바탕으로 브랜드의 완성도를 높이고, 사용자와 브랜드 모두에게 긍정적인 경험을 주는 디자이너가 되고자 합니다.</p>
+      <h1 data-edit>안녕하세요,<br>디자인부터 운영·자동화까지 <span class="hl">박서현</span>입니다.</h1>
+      <p class="intro-lead" data-edit>패션 브랜드와 이커머스 실무를 13년간 직접 굴려왔습니다.
+      <b>브랜드를 만들고(기획·비주얼), 팔고(상세페이지·채널 운영), 그 과정의 반복 작업을 도구로 바꾸는 일(자동화)</b>까지
+      한 사람이 이어서 처리합니다.</p>
+      <p class="intro-sub" data-edit>디자인 결과물에서 멈추지 않습니다. 어디가 병목인지 찾아 프로세스를 표준화하고,
+      필요하면 직접 도구를 만들어 해결합니다. 13년간 실무를 해왔기 때문에 <b>무엇이 진짜 문제인지 판단할 수 있는 것</b>이 강점입니다.</p>
       <div class="kw-row">
-        <span class="kw gold" data-edit>문제 해결형 디자이너</span>
-        <span class="kw gold" data-edit>브랜드 운영 경험</span>
-        <span class="kw gold" data-edit>이커머스 실무 전문가</span>
-        <span class="kw gold" data-edit>AI 워크플로 설계</span>
-        <span class="kw" data-edit>실행 중심 프로젝트 운영</span>
-        <span class="kw" data-edit>업무 프로세스 개선</span>
-        <span class="kw" data-edit>업무 자동화</span>
-        <span class="kw" data-edit>온라인몰 운영 안정화</span>
-        <span class="kw" data-edit>브랜드 품질 관리</span>
+        <span class="kw gold" data-edit>브랜드 기획·런칭</span>
+        <span class="kw gold" data-edit>이커머스 운영 전반</span>
+        <span class="kw gold" data-edit>업무 자동화·도구 제작</span>
+        <span class="kw" data-edit>상세페이지 대량 제작</span>
+        <span class="kw" data-edit>촬영·비주얼 디렉션</span>
+        <span class="kw" data-edit>서비스 기획부터 출시까지</span>
       </div>
       <p class="who" data-edit><b>지원 직무</b> <span class="ph-edit">[지원 직무 입력]</span> &nbsp;·&nbsp; <b>지원 회사</b> <span class="ph-edit">[지원 회사명 입력]</span> &nbsp;·&nbsp; 파슨스 브랜드 마케팅·디자인·이커머스 (2013–2026)</p>
+      <div class="cover-nums" data-edit>
+        <span><b>13년</b>브랜드·이커머스 실무</span>
+        <span><b>11개</b>브랜드 운영</span>
+        <span><b>980+</b>상세페이지 제작</span>
+        <span><b>+41%</b>자사몰 매출 성장</span>
+        <span><b>3건</b>신규 브랜드 출시</span>
+      </div>
     </div>
 
     <div class="resume">
@@ -401,29 +424,24 @@ body.editing .hero-img-btn{display:inline-block}
     <section class="cl">
       <div class="n">01</div>
       <h3 data-edit>경력 · 업무 역량 & 성격 · 장단점</h3>
-      <p data-edit>파슨스에서 <b>자체 브랜드 11개(세컨브랜드 8 · 개별 브랜드 3)</b>의 아이덴티티·마케팅·상품 콘텐츠를 총괄했습니다.
-      크리에이터 협업 브랜드 <b>COLOR BY NUMBER</b>를 기획부터 출시까지 전 과정 수행했고,
-      아티스트 협업 그래픽 브랜드 <b>SAVE A DOG</b>를 Etsy·Amazon 등 해외 마켓과 USPTO 상표 등록까지 이끌며
-      <b>신규 브랜드 런칭 경험</b>을 여러 차례 쌓았습니다.</p>
-      <p data-edit>동시에 4년간 <b>약 42개 배치·980개 이상의 상품 상세페이지</b>를 모델·디테일 촬영부터 편집·업로드까지 직접 제작했고,
-      사이트 운영·리뉴얼, 고객관리(CS), 주문·배송까지 온라인 스토어 운영 전반을 도맡았습니다. 디자인(Photoshop·Illustrator)부터 운영·CS까지
-      한 사람이 커버할 수 있는 <b>넓은 실무 스펙트럼</b>이 강점입니다.</p>
+      <p data-edit>파슨스에서 <b>자체 브랜드 11개</b>의 아이덴티티·마케팅·상품 콘텐츠를 총괄하며,
+      신규 브랜드 <b>COLOR BY NUMBER</b>와 <b>SAVE A DOG</b>를 기획부터 출시까지 직접 진행했습니다.
+      동시에 4년간 <b>42배치·980개 이상의 상세페이지</b>를 촬영부터 편집·업로드까지 제작하고,
+      사이트 운영·CS·주문·배송까지 온라인 스토어 전반을 도맡았습니다.</p>
       <div class="callout">
         <div class="cobox">
           <div class="ct" data-edit>문제해결능력</div>
-          <p class="cd" data-edit>자원과 시간이 한정된 환경에서 신규 브랜드를 소규모로 먼저 테스트하고 성과가 확인되면 확장하는 방식으로 리스크를 줄였습니다.
-          또한 대량의 상세페이지 제작 병목을 <b>업로드 배치 단위의 표준 프로세스</b>로 정착시켜, 여러 브랜드 상품을 안정적으로 처리했습니다.</p>
+          <p class="cd" data-edit>신규 브랜드는 소규모로 먼저 테스트하고 성과가 확인되면 확장해 리스크를 줄였습니다.
+          상세페이지 제작 병목은 <b>업로드 배치 단위의 표준 프로세스</b>로 정착시켰습니다.</p>
         </div>
         <div class="cobox">
           <div class="ct" data-edit>의사소통능력</div>
-          <p class="cd" data-edit>디자이너·매장·고객 사이에서 조율하는 역할을 오래 맡았습니다. 대표 매장들과 <b>2주 단위 양방향 소통을 데이터로 정리</b>해
-          목표를 공유하고, 일방적 지시가 아닌 협업으로 매장의 부담을 줄이며 공동의 목표를 만들어 왔습니다.</p>
+          <p class="cd" data-edit>대표 매장들과 <b>2주 단위 소통을 데이터로 정리</b>해 목표를 공유하고,
+          일방적 지시가 아닌 협업으로 매장의 부담을 줄여 왔습니다.</p>
         </div>
       </div>
-      <p data-edit style="margin-top:18px"><b>장점</b>은 맡은 일을 끝까지 책임지는 <b>오너십</b>과, 촬영·디자인·운영·CS를 아우르는 <b>넓은 실무 커버리지</b>입니다.
-      상품 하나하나의 디테일을 놓치지 않는 꼼꼼함으로, 브랜드의 톤을 온·오프라인 전반에 일관되게 유지해 왔습니다.</p>
-      <p data-edit><b>단점</b>은 완성도를 높이려다 일을 스스로 떠안는 경향이 있었다는 점입니다. 이를 보완하기 위해 <b>우선순위를 명확히 하고
-      업무를 표준화·분담</b>하는 방식을 익혀, 지금은 중요한 일에 집중하면서도 팀과 함께 효율적으로 처리하려 노력하고 있습니다.</p>
+      <p data-edit style="margin-top:18px"><b>장점</b>은 끝까지 책임지는 오너십과, 촬영·디자인·운영·CS를 아우르는 <b>넓은 실무 커버리지</b>입니다.
+      <b>단점</b>은 완성도를 높이려다 일을 스스로 떠안는 경향이 있었다는 점인데, <b>우선순위를 정하고 업무를 표준화·분담</b>하는 방식으로 보완해 왔습니다.</p>
     </section>
 
     <section class="cl">
@@ -432,26 +450,18 @@ body.editing .hero-img-btn{display:inline-block}
       <div class="ds">
         <p class="lead" data-edit>디자이너의 시간은 대부분 <strong>‘만드는 일’보다 ‘옮기고 맞추는 일’</strong>에 쓰입니다.</p>
 
-        <p data-edit>촬영 원본에서 컷을 고르고, 규격에 맞춰 리사이즈하고, 파일명을 상품코드에 맞게 변경하는 작업.
-        한 번에 <strong class="highlight">2,500컷 이상</strong>, 이를 <strong class="highlight">4년간 42회</strong> 반복했습니다.</p>
-
-        <p class="emphasis" data-edit>어느 순간 이 과정은 디자인이 아니라 <strong>반복 노동</strong>이라는 사실이 분명해졌습니다.</p>
-
-        <p data-edit>그래서 직접 도구를 만들기 시작했습니다. 개발자는 아니지만,
-        <em>무엇이 병목이고 어떤 문제를 해결해야 하는지</em> 정확히 알고 있었기 때문입니다.</p>
-
-        <p data-edit>그 판단의 근거는 <strong class="accent">13년간의 실무 경험</strong>입니다.</p>
+        <p data-edit>한 번에 <strong class="highlight">2,500컷 이상</strong>을 <strong class="highlight">4년간 42회</strong> 고르고 맞추고 나니,
+        이건 디자인이 아니라 <strong>반복 노동</strong>이라는 게 분명해졌습니다.
+        그래서 직접 도구를 만들기 시작했습니다. 개발자는 아니지만,
+        <em>무엇이 병목인지</em>는 <strong class="accent">13년간의 실무 경험</strong>으로 알고 있었습니다.</p>
 
         <blockquote data-edit>AI가 코드를 작성하더라도,<br>
         <strong>어떤 문제를 풀어야 하는지 결정하는 것은 사람의 몫입니다.</strong></blockquote>
 
-        <p data-edit>이 포트폴리오 역시 템플릿이나 외주 없이 제작했으며,
-        상단의 <strong class="feature">✏️ 편집 모드</strong>까지 직접 구현했습니다.</p>
-
         <p class="conclusion" data-edit>저는 <em>도구를 사용하는 디자이너</em>에서<br>
         <strong>도구를 만드는 디자이너</strong>로 넘어왔습니다.</p>
 
-        <p data-edit>AI에게 정확히 요구하고, 결과가 실무에서 쓸 만한지 판단할 수 있습니다.
+        <p data-edit>이 포트폴리오도 직접 만들었습니다.
         <strong class="final-message">지금 보고 계신 이 페이지가 그 증거입니다.</strong></p>
       </div>
     </section>
@@ -473,8 +483,8 @@ body.editing .hero-img-btn{display:inline-block}
   <div class="wrap inner">
     <div class="kicker" data-edit>Fashion Brand Marketing &amp; Design · 2013–2026</div>
     <h1 data-edit>브랜드를 만들고<br>키워온 13년</h1>
-    <p class="lead" data-edit>파슨스(PARSONS)에서 10여 개 브랜드의 아이덴티티·마케팅·이커머스 콘텐츠를 총괄하고,
-    신규 브랜드를 기획부터 출시까지 직접 진행해 국내외 시장까지 전개했습니다.</p>
+    <p class="lead" data-edit>브랜드 기획과 비주얼, 이커머스 운영, 그리고 반복 업무를 줄이는 도구 제작까지 —
+    <b>만드는 일부터 파는 일, 굴리는 일</b>을 한 손으로 이어서 처리해 왔습니다.</p>
     <div class="meta">
       <span data-edit><b>재직</b> 주식회사 파슨스앤코 2013 – 2026 · <b>팀장</b></span>
       <span data-edit><b>역할</b> 브랜드 마케팅 · 촬영/비주얼 · 쇼핑몰 운영 전반</span>
@@ -496,27 +506,20 @@ body.editing .hero-img-btn{display:inline-block}
 <section class="block" id="about">
   <div class="wrap">
     <p class="eyebrow" data-edit>About</p>
-    <h2 class="sec serif" data-edit>기획–제작–런칭–성과를 잇는 올라운드 브랜드 마케터</h2>
-    <p class="sec-sub" data-edit>패션 리테일의 전 과정을 한 손으로 — 브랜드 컨셉부터 비주얼, 상세페이지, 캠페인, 해외 진출까지.</p>
+    <h2 class="sec serif" data-edit>만들고, 팔고, 굴리는 일을 한 손으로</h2>
+    <p class="sec-sub" data-edit>브랜드 컨셉·비주얼부터 상세페이지, 채널 운영, 고객·주문·배송, 그리고 업무 자동화까지.</p>
     <div class="about-grid">
       <div class="about">
-        <p data-edit>파슨스는 자사가 상표권을 소유한 10여 개 자체 디자이너 브랜드를 직접 전개하는 영 컨템포러리 편집샵입니다.
-        저는 이곳에서 <b>팀장</b>으로서 <b>브랜드 아이덴티티·로고·패키지·VMD</b> 같은 디자인 작업부터 <b>인스타그램·백화점/아울렛 행사·CRM</b> 같은 온·오프라인 캠페인,
-        그리고 대규모 <b>이커머스 상세페이지 제작</b>과 <b>신규 브랜드 런칭</b>까지 폭넓게 담당했습니다.</p>
-        <p data-edit>특히 크리에이터 협업 브랜드 <b>COLOR BY NUMBER</b>의 신규 제작 및 출시를 직접 진행했고, 아티스트 협업 그래픽 브랜드
-        <b>SAVE A DOG</b>를 Etsy·Amazon 등 해외 마켓과 USPTO 상표 등록까지 끌고 간 경험이 강점입니다.</p>
-        <p data-edit>무엇보다 쇼핑몰 <b>모델 촬영과 디테일(제품) 촬영</b>을 직접 진행하고, <b>사이트 운영·리뉴얼, 고객관리(CS), 주문관리, 배송</b>까지
-        온라인 스토어 운영의 처음부터 끝까지를 도맡아 온, 실무 커버리지가 넓은 올라운더입니다.</p>
-        <p data-edit>운영 툴은 <b>사방넷</b>(주문·재고 통합관리), <b>카페24</b>·<b>아임웹</b>(자사몰 구축·운영),
-        <b>무신사</b>(입점·상품 등록·판매 관리)를 실무로 사용했습니다. 새로운 채널이나 솔루션이 붙어도 빠르게 적응합니다.</p>
+        <p data-edit>파슨스는 상표권을 보유한 10여 개 자체 브랜드를 직접 전개하는 영 컨템포러리 편집샵입니다.
+        저는 <b>팀장</b>으로서 브랜드 아이덴티티·VMD부터 캠페인, 상세페이지 제작, 신규 브랜드 출시까지 담당했습니다.</p>
+        <p data-edit>모델·제품 촬영을 직접 진행하고 <b>사이트 운영·CS·주문·배송</b>까지 도맡았습니다.
+        운영 툴은 <b>사방넷</b>·<b>카페24</b>·<b>아임웹</b>·<b>무신사</b>를 실무로 썼습니다.</p>
         <div class="tags">
           <span class="tag" data-edit>브랜드 기획·네이밍</span><span class="tag" data-edit>로고·CI/BI</span>
           <span class="tag" data-edit>Photoshop · Illustrator</span><span class="tag" data-edit>상세페이지·촬영 디렉션</span>
           <span class="tag" data-edit>인스타그램 운영</span><span class="tag" data-edit>백화점·아울렛 VMD</span>
-          <span class="tag" data-edit>PPL·스타마케팅</span><span class="tag" data-edit>정기 성과 리포팅</span>
-          <span class="tag" data-edit>퍼포먼스·CRM</span><span class="tag" data-edit>글로벌 마켓(Etsy·Amazon)</span>
-          <span class="tag" data-edit>모델·디테일 촬영</span><span class="tag" data-edit>쇼핑몰 운영·리뉴얼</span>
-          <span class="tag" data-edit>고객관리(CS)</span><span class="tag" data-edit>주문·배송 관리</span>
+          <span class="tag" data-edit>PPL·스타마케팅</span><span class="tag" data-edit>퍼포먼스·CRM</span>
+          <span class="tag" data-edit>글로벌 마켓(Etsy·Amazon)</span><span class="tag" data-edit>쇼핑몰 운영·CS·주문</span>
           <span class="tag" data-edit>사방넷</span><span class="tag" data-edit>카페24</span>
           <span class="tag" data-edit>아임웹</span><span class="tag" data-edit>무신사 입점·운영</span>
           <span class="tag" data-edit>Claude Code</span><span class="tag" data-edit>HTML/CSS</span><span class="tag" data-edit>업무 자동화 스크립트</span>
@@ -536,7 +539,7 @@ body.editing .hero-img-btn{display:inline-block}
 
     <div class="brand-wall-head">
       <h3 class="bw-title serif" data-edit>운영한 브랜드</h3>
-      <p class="bw-sub" data-edit>파슨스가 상표권을 보유한 자체 브랜드들. 각 브랜드의 소개 비주얼과 웹 배너를 직접 제작했습니다.</p>
+      <p class="bw-sub" data-edit>각 브랜드의 소개 비주얼과 웹 배너를 직접 제작했습니다.</p>
     </div>
     <div class="brand-wall">
       <div class="bw"><img src="images/brand_parsons.jpg" data-key="brand_parsons" class="editable-img" loading="lazy" alt="PARSONS"></div>
@@ -559,7 +562,7 @@ body.editing .hero-img-btn{display:inline-block}
     <div class="ops reveal">
       <p class="eyebrow" data-edit>End-to-End Operation</p>
       <h2 class="sec serif" data-edit>쇼핑몰 운영, 처음부터 끝까지 직접</h2>
-      <p class="sub" data-edit>촬영·비주얼부터 운영·고객·주문·배송까지 — 온라인 스토어의 전 과정을 도맡아 굴려온 실무 커버리지.</p>
+      <p class="sub" data-edit>촬영·비주얼부터 운영·고객·주문·배송까지 도맡아 굴려온 실무 커버리지.</p>
       <div class="ops-grid">
         <div class="ops-card"><div class="no">01</div><div class="t" data-edit>모델 촬영</div><div class="d" data-edit>착장·컨셉 디렉션부터 촬영까지</div></div>
         <div class="ops-card"><div class="no">02</div><div class="t" data-edit>디테일 촬영</div><div class="d" data-edit>소재·봉제·디테일 제품컷</div></div>
@@ -574,9 +577,9 @@ body.editing .hero-img-btn{display:inline-block}
 
 <!-- PROJECTS -->
 <div class="wrap">
-  <p class="eyebrow" data-edit>Selected Work</p>
-  <h2 class="sec serif" data-edit>대표 프로젝트 6</h2>
-  <p class="sec-sub" data-edit>가장 임팩트 있었던 여섯 개의 브랜드 · 캠페인 · 워크플로 프로젝트.</p>
+  <p class="eyebrow" data-edit>Key Projects</p>
+  <h2 class="sec serif" data-edit>대표 프로젝트 5</h2>
+  <p class="sec-sub" data-edit>브랜드 출시 · 이커머스 콘텐츠 시스템 · 업무 자동화 · 서비스 개발.</p>
 
   <!-- P1 CBN -->
   <article class="project" id="p1">
@@ -585,12 +588,16 @@ body.editing .hero-img-btn{display:inline-block}
     <p class="p-role" data-edit><b>역할</b> 브랜드 기획 · 촬영 디렉션 · 어바웃어스/상세페이지 · 채널 오픈 · SNS 운영대행 &nbsp;|&nbsp; <b>기간</b> 2024–2026</p>
     <div class="p-body">
       <div>
-        <p data-edit>디자이너 중심에서 크리에이터 중심으로 넘어가는 흐름에 맞춰, 인플루언서×디자이너 협업 브랜드를
-        <b>아이디어 단계에서 실제 제품으로 구현해 첫 출시까지 직접 진행했습니다.</b> 촬영 계획안과 상품 라인시트를 직접 기획하고, RAW 촬영 소스부터 편집·합성까지 콘텐츠 전 과정을 리드했습니다.</p>
-        <p data-edit>브랜드 로고·어바웃어스 페이지·제품 상세페이지를 구축하고, 카카오톡 채널·팝업스토어·릴스 등 채널을 열어
-        <b>온라인 오픈부터 상시 SNS 운영</b>까지 담당했습니다. 백화점 7개 매장 입점과 함께 온라인 편집숍 <b>W컨셉 브랜드관</b>에 입점해
-        판매 채널을 확장했고, 신규 고객층 유입으로 파슨스 매장 리프레쉬를 견인했습니다.</p>
-        <div class="chips"><span class="chip" data-edit>브랜드 런칭</span><span class="chip" data-edit>촬영 디렉션</span><span class="chip" data-edit>인플루언서 마케팅</span><span class="chip" data-edit>7개 매장 입점</span><span class="chip" data-edit>W컨셉 입점</span></div>
+        <div class="p-struct" data-edit>
+          <div class="row"><div class="k">문제</div><p class="v">디자이너 중심에서 크리에이터 중심으로 넘어가는 시장 흐름에 대응할 신규 브랜드가 필요했습니다.</p></div>
+          <div class="row"><div class="k">역할</div><p class="v">브랜드 기획 · 촬영 디렉션 · 어바웃어스/상세페이지 · 채널 오픈 · SNS 운영</p></div>
+          <div class="row"><div class="k">실행</div><p class="v">인플루언서×디자이너 협업 브랜드를 <b>아이디어 단계에서 실제 제품으로 구현해 첫 출시까지</b> 진행했습니다.
+          촬영 계획안·상품 라인시트를 기획하고 RAW 소스부터 편집·합성까지 콘텐츠 전 과정을 리드했으며,
+          로고·어바웃어스·상세페이지를 구축하고 카카오톡 채널·팝업스토어·릴스를 열었습니다.</p></div>
+          <div class="row"><div class="k">성과</div><p class="v"><b>백화점 7개 매장</b> 입점, 온라인 편집숍 <b>W컨셉 브랜드관</b> 입점으로 판매 채널을 확장했습니다.
+          신규 고객층 유입으로 파슨스 매장 리프레쉬를 견인했습니다.</p></div>
+        </div>
+        <div class="chips"><span class="chip" data-edit>브랜드 출시</span><span class="chip" data-edit>촬영 디렉션</span><span class="chip" data-edit>인플루언서 마케팅</span><span class="chip" data-edit>7개 매장 입점</span><span class="chip" data-edit>W컨셉 입점</span></div>
       </div>
       <div class="gal g2">
         <div class="frame" style="grid-column:1/3;background:var(--card);display:flex;align-items:center;justify-content:center;padding:30px"><img src="images/cbn_logo.jpg" data-key="cbn_logo" class="editable-img " loading="lazy" alt=""></div>
@@ -621,13 +628,15 @@ body.editing .hero-img-btn{display:inline-block}
         <div class="frame square"><img src="images/sad_hughub.jpg" data-key="sad_hughub" class="editable-img " loading="lazy" alt=""></div>
       </div>
       <div>
-        <p data-edit>작가(존 보이드 등)와 협업한 캐릭터·그래픽을 중심으로 한 브랜드를 기획하고, 국내를 넘어
-        <b>Etsy와 Amazon 등 글로벌 마켓</b>에 런칭했습니다. 캐릭터 스티커·배너·화가 소개 등 마켓별 콘텐츠를 제작하고,
-        아마존 계정 등록과 리스팅까지 실무로 진행했습니다.</p>
-        <p data-edit>국내에서는 <b>무신사 입점에 성공</b>해, 입점 제안·서류 제출부터 상품 등록·콘텐츠 제작·판매 관리까지
-        <b>전 과정에 참여</b>했습니다.</p>
-        <p data-edit>브랜드 보호를 위해 <b>USPTO(미국 특허상표청) 디자인 상표 출원</b>까지 처리했고, 수익 일부를 유기견·유기묘 구조에 기부하는
-        브랜드 스토리(HUG&amp;HUB)를 함께 설계했습니다.</p>
+        <div class="p-struct" data-edit>
+          <div class="row"><div class="k">문제</div><p class="v">국내 시장만으로는 성장에 한계가 있어, 해외로 나갈 수 있는 브랜드가 필요했습니다.</p></div>
+          <div class="row"><div class="k">역할</div><p class="v">브랜드 기획 · 아티스트 협업 그래픽 · 글로벌 마켓 출시 · 상표 등록</p></div>
+          <div class="row"><div class="k">실행</div><p class="v">작가(존 보이드 등)와 협업한 캐릭터·그래픽 브랜드를 기획하고 <b>Etsy·Amazon</b>에 출시했습니다.
+          마켓별 콘텐츠 제작과 아마존 계정 등록·리스팅을 직접 처리했고, 수익 일부를 유기견·유기묘 구조에 기부하는
+          브랜드 스토리(HUG&amp;HUB)를 함께 설계했습니다.</p></div>
+          <div class="row"><div class="k">성과</div><p class="v"><b>무신사 입점</b>에 성공해 제안·서류부터 상품 등록·판매 관리까지 전 과정에 참여했고,
+          브랜드 보호를 위해 <b>USPTO 디자인 상표 출원</b>까지 완료했습니다.</p></div>
+        </div>
         <div class="chips"><span class="chip" data-edit>아티스트 협업</span><span class="chip" data-edit>Etsy · Amazon</span><span class="chip" data-edit>무신사 입점</span><span class="chip" data-edit>USPTO 상표 등록</span><span class="chip" data-edit>브랜드 스토리</span></div>
       </div>
     </div>
@@ -637,40 +646,25 @@ body.editing .hero-img-btn{display:inline-block}
     </div>
     <div class="proof">
       <div class="frame"><img src="images/sad_musinsa.jpg" data-key="sad_musinsa" class="editable-img" loading="lazy" alt="무신사 SAVE A DOG 브랜드관"></div>
-      <p class="proof-cap" data-edit><b>무신사 SAVE A DOG 브랜드관</b> — 입점 제안·서류부터 상품 등록·콘텐츠 제작까지 직접 진행해
-      현재 <b>32개 상품</b>을 판매 중입니다. 상세페이지에 쓰인 캐릭터 그래픽은 위 아트워크에서 이어집니다.</p>
+      <p class="proof-cap" data-edit><b>무신사 SAVE A DOG 브랜드관</b> — 입점 제안부터 상품 등록·콘텐츠 제작까지 직접 진행해 현재 <b>32개 상품</b> 판매 중.</p>
     </div>
   </article>
 
-  <!-- P3 herewhere -->
+  <!-- P3 detail pages -->
   <article class="project" id="p3">
-    <div class="p-head"><span class="p-num">03</span><span class="p-badge" data-edit>개별 브랜드</span></div>
-    <h3 class="p-title" data-edit>herewhere — 독립 브랜드 웹·상세페이지 전개</h3>
-    <p class="p-role" data-edit><b>역할</b> 브랜드 비주얼 · 웹페이지 · 상품 상세페이지 &nbsp;|&nbsp; <b>포지션</b> 따스한 컬러·여유로운 실루엣의 데일리 브랜드</p>
-    <div class="p-body">
-      <div>
-        <p data-edit>‘봄 햇살처럼 포근하게’를 컨셉으로 한 개별 브랜드 herewhere의 <b>브랜드 웹페이지와 상품 상세페이지</b>를 전개했습니다.
-        메인·베스트·전체상품 페이지 레이아웃과 제품별 상세페이지를 일관된 톤으로 구성해, 브랜드 무드를 온라인 경험 전반에 녹였습니다.</p>
-        <div class="chips"><span class="chip" data-edit>브랜드 웹</span><span class="chip" data-edit>상세페이지</span><span class="chip" data-edit>비주얼 디렉션</span></div>
-      </div>
-      <div class="scroll-shot"><img src="images/here_main.jpg" data-key="here_main" class="editable-img " loading="lazy" alt=""></div>
-    </div>
-    <div class="p-body" style="margin-top:22px">
-      <div class="scroll-shot"><img src="images/here_best.jpg" data-key="here_best" class="editable-img " loading="lazy" alt=""></div>
-      <div class="scroll-shot"><img src="images/here_detail.jpg" data-key="here_detail" class="editable-img " loading="lazy" alt=""></div>
-    </div>
-  </article>
-
-  <!-- P4 detail pages -->
-  <article class="project" id="p4">
-    <div class="p-head"><span class="p-num">04</span><span class="p-badge" data-edit>이커머스 · 콘텐츠 시스템</span></div>
+    <div class="p-head"><span class="p-num">03</span><span class="p-badge" data-edit>이커머스 · 콘텐츠 시스템</span></div>
     <h3 class="p-title" data-edit>제품 상세페이지 제작 시스템 — 4년 · 42배치 · 980+ 상품</h3>
-    <p class="p-role" data-edit><b>역할</b> 모델·디테일 촬영 · 편집/합성 · 업로드 규격화 · 상품/운영 관리 &nbsp;|&nbsp; <b>기간</b> 2022–2026(약 2~4주 주기)</p>
+    <p class="p-role" data-edit><b>기간</b> 2022–2026 (약 2~4주 주기)</p>
     <div class="p-body">
       <div>
-        <p data-edit>여러 브랜드의 신상품을 <b>업로드 배치 단위</b>로 관리하며, 모델 착용컷과 제품 디테일컷을 결합한 표준 상세페이지를 대량 제작했습니다.
-        포토샵 마스터 파일(100~500MB)에서 작업해 웹 업로드용 슬라이스로 규격화하는 <b>전 공정</b>을 담당했습니다.</p>
-        <p data-edit>4년간 약 <b>42개 배치 · 980개 이상의 상품</b>을 안정적으로 제작·업로드한, 정량으로 증명되는 콘텐츠 생산력입니다.</p>
+        <div class="p-struct" data-edit>
+          <div class="row"><div class="k">문제</div><p class="v">여러 브랜드의 신상품이 2~4주마다 쏟아지는데, 상세페이지 제작 방식이 매번 달라 품질과 속도가 들쭉날쭉했습니다.</p></div>
+          <div class="row"><div class="k">역할</div><p class="v">모델·디테일 촬영 · 편집/합성 · 업로드 규격화 · 상품/운영 관리</p></div>
+          <div class="row"><div class="k">실행</div><p class="v">신상품을 <b>업로드 배치 단위</b>로 묶어 관리하고, 모델 착용컷과 제품 디테일컷을 결합한 표준 상세페이지 포맷을 정착시켰습니다.
+          포토샵 마스터 파일(100~500MB)에서 웹 업로드용 슬라이스로 규격화하는 <b>전 공정</b>을 담당했습니다.</p></div>
+          <div class="row"><div class="k">성과</div><p class="v">4년간 <b>42개 배치 · 980개 이상의 상품</b>을 안정적으로 제작·업로드했습니다.
+          이때 파악한 반복 구간이 뒤에 나오는 자동화 프로젝트의 출발점이 됐습니다.</p></div>
+        </div>
         <div class="chips"><span class="chip" data-edit>모델컷+디테일컷</span><span class="chip" data-edit>대량 제작</span><span class="chip" data-edit>업로드 규격화</span></div>
       </div>
       <div class="gal g2">
@@ -685,77 +679,24 @@ body.editing .hero-img-btn{display:inline-block}
     </div>
   </article>
 
-  <!-- P5 parsons brand & VMD -->
-  <article class="project" id="p5">
-    <div class="p-head"><span class="p-num">05</span><span class="p-badge" data-edit>브랜드 · VMD · 스타마케팅</span></div>
-    <h3 class="p-title" data-edit>파슨스 브랜드 & 백화점·아울렛 VMD</h3>
-    <p class="p-role" data-edit><b>역할</b> 브랜드 키비주얼 · 리프레쉬 전략 · 매장 VMD · 협찬(PPL) 운영 &nbsp;|&nbsp; <b>채널</b> 롯데 백화점·아울렛 23개 매장</p>
-    <div class="p-body">
-      <div class="gal g2">
-        <div class="frame tall"><img src="images/parsons_kv.jpg" data-key="parsons_kv" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame tall"><img src="images/parsons_intro.jpg" data-key="parsons_intro" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame tall"><img src="images/db_101.jpg" data-key="db_101" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame tall"><img src="images/db_105.jpg" data-key="db_105" class="editable-img " loading="lazy" alt=""></div>
-      </div>
-      <div>
-        <p data-edit>‘Beauty is not enough’ 슬로건 아래 파슨스의 <b>브랜드 키비주얼과 시즌 컬렉션 비주얼</b>을 제작하고,
-        젊은 감각으로의 <b>브랜드 리프레쉬 전략</b>을 기획했습니다.</p>
-        <p data-edit>동부산·김포 등 <b>백화점·아울렛 매장 오픈과 시즌 행사</b>의 VMD·홍보물을 담당해, 온라인 비주얼과 오프라인 매장 경험을 하나의 톤으로 연결했습니다.</p>
-        <p data-edit>2019년부터 4년간 <b>드라마·예능·유튜브 협찬(PPL)</b>을 운영했습니다. tvN 「호텔 델루나」·「검색어를 입력하세요 WWW」,
-        JTBC 「바람이 분다」·「보좌관」, KBS2 「세상에서 제일 예쁜 내 딸」 등 <b>12편 이상의 프로그램</b>에 상품을 협찬하고,
-        <b>품번 단위로 회차별 노출을 관리</b>했습니다. 협찬 대행사와 협업하며 롯데백화점에 <b>주간·월간 성과 보고서를 정기 제출</b>했습니다.</p>
-        <div class="chips"><span class="chip" data-edit>키비주얼</span><span class="chip" data-edit>브랜드 리프레쉬</span><span class="chip" data-edit>매장 오픈 행사</span><span class="chip" data-edit>PPL 협찬</span><span class="chip" data-edit>스타마케팅</span><span class="chip" data-edit>정기 성과보고</span><span class="chip" data-edit>옴니채널</span></div>
-      </div>
-    </div>
-    <div class="gal g3 feature-full">
-      <div class="frame tall"><img src="images/db_open.jpg" data-key="db_open" class="editable-img " loading="lazy" alt=""></div>
-      <div class="frame tall"><img src="images/db_look1.jpg" data-key="db_look1" class="editable-img " loading="lazy" alt=""></div>
-      <div class="frame tall"><img src="images/db_look2.jpg" data-key="db_look2" class="editable-img " loading="lazy" alt=""></div>
-    </div>
-  </article>
-
-  <!-- MOTION / 영상 -->
-  <section class="motion" id="motion">
-    <p class="eyebrow" data-edit>Motion</p>
-    <h2 class="sec serif" data-edit>정지된 이미지에서 멈추지 않습니다</h2>
-    <p class="sec-sub" data-edit>매장 TV·매장 앞 디스플레이에 상영하는 브랜드 영상을 촬영 소스 정리부터 컷 편집 · 자막 · 색보정까지
-    <b>동영상 편집 완성까지 직접</b> 처리하고, <b>같은 소스를 인스타그램 릴스로 재편집</b>해 온·오프라인에 함께 썼습니다.
-    디자인과 영상이 하나의 톤으로 이어지도록 같은 손으로 만듭니다.</p>
-    <div class="vgrid">
-      <div class="vcard">
-        <video src="video/vmd_christmas.mp4" poster="video/vmd_christmas.jpg"
-               autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap" data-edit><b>크리스마스 시즌 영상</b>동부산점 시즌 VMD · 매장 송출</div>
-      </div>
-      <div class="vcard">
-        <video src="video/vmd_tv.mp4" poster="video/vmd_tv.jpg"
-               autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap" data-edit><b>25FW 신상 티저</b>매장 TV 송출 · 시즌 오프닝</div>
-      </div>
-      <div class="vcard">
-        <video src="video/vmd_pop.mp4" poster="video/vmd_pop.jpg"
-               autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap" data-edit><b>브랜드 무드 영상</b>매장 앞 디스플레이 DP · ‘Beauty is not enough’</div>
-      </div>
-    </div>
-    <p class="vnote" data-edit>※ 세 편 모두 매장 상영본과 SNS·릴스용을 하나의 촬영 소스에서 각각 편집해 활용했습니다.
-    자동 재생 · 무음 · 반복 재생.</p>
-  </section>
-
-  <!-- P6 AI WORKFLOW -->
-  <article class="project" id="p6">
-    <div class="p-head"><span class="p-num">06</span><span class="p-badge alt" data-edit>AI 워크플로 · 업무 자동화</span></div>
+  <!-- P4 AI WORKFLOW -->
+  <article class="project" id="p4">
+    <div class="p-head"><span class="p-num">04</span><span class="p-badge alt" data-edit>AI 워크플로 · 업무 자동화</span></div>
     <h3 class="p-title" data-edit>손으로 하던 일을 도구로 — Claude Code 기반 실무 자동화</h3>
     <p class="p-role" data-edit><b>역할</b> 문제 정의 · 도구 설계 · 직접 구현 · 실무 적용</p>
     <div class="p-body">
       <div>
-        <p data-edit>4년간 42배치 · 980개 이상의 상세페이지를 제작하며, 매 배치마다 반복되는 구간이 명확해졌습니다.
-        100~500MB 포토샵 마스터 파일에서 웹 업로드용 슬라이스를 뽑고, 규격에 맞춰 리사이즈하고,
-        파일명을 상품코드 규칙에 맞게 정리하는 과정이었습니다.</p>
-        <p data-edit>이 구간을 <b>Claude Code로 스크립트화</b>해 반복 작업 시간을 크게 줄였습니다.
-        <b>13년간 이 일을 직접 해왔기 때문에, 어디가 진짜 병목인지 알고 도구를 만들 수 있었습니다.</b></p>
-        <p data-edit>리포팅도 같은 구조였습니다. 2019년부터 4년간 롯데백화점에 주간·월간 실적 보고서를 직접 작성했고,
-        남아 있는 것만 <b>60건 이상</b>입니다. 매번 같은 양식에 숫자만 바뀌는 작업이었습니다 — 지금은 이 구간을 도구가 처리합니다.</p>
+        <div class="p-struct" data-edit>
+          <div class="row"><div class="k">병목</div><p class="v">42배치·980개 상세페이지를 만들며 매 배치마다 같은 구간이 반복됐습니다.
+          100~500MB 포토샵 파일에서 슬라이스를 뽑고, 규격대로 리사이즈하고, 파일명을 상품코드에 맞게 정리하는 일.
+          롯데백화점 <b>주간·월간 보고서 60건 이상</b>도 같은 양식에 숫자만 바뀌는 작업이었습니다.</p></div>
+          <div class="row"><div class="k">판단</div><p class="v">디자인이 아니라 <b>옮기고 맞추는 일</b>에 시간이 쓰이고 있었습니다.
+          규칙이 명확한 구간이라 사람이 반복할 이유가 없다고 봤습니다.</p></div>
+          <div class="row"><div class="k">제작</div><p class="v"><b>Claude Code로 직접 스크립트를 만들었습니다.</b>
+          개발자는 아니지만 13년간 이 일을 해왔기 때문에 어디가 진짜 병목인지 알고 도구를 설계할 수 있었습니다.</p></div>
+          <div class="row"><div class="k">적용</div><p class="v">이미지 일괄 처리 · 상품 등록 파일 변환 · 매장 데이터 리포트 · 웹페이지 제작 네 가지를
+          <b>실무에 직접 적용</b>해 반복 작업 시간을 크게 줄였습니다.</p></div>
+        </div>
         <div class="chips"><span class="chip" data-edit>업무 자동화</span><span class="chip" data-edit>Claude Code</span><span class="chip" data-edit>이미지 배치 처리</span><span class="chip" data-edit>프로세스 개선</span></div>
       </div>
       <div class="auto-grid">
@@ -765,62 +706,28 @@ body.editing .hero-img-btn{display:inline-block}
         <div class="auto-card"><div class="at" data-edit>웹페이지 직접 제작</div><p class="ad" data-edit>룩북 · 상세페이지 · 포트폴리오를 HTML로 직접 구현하고 링크로 공유</p></div>
       </div>
     </div>
-    <div class="gal g2" style="margin-top:22px">
-      <div class="frame wide"><img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ece7de'/%3E%3Ctext x='50%25' y='50%25' font-size='26' fill='%238b8578' text-anchor='middle' font-family='sans-serif'%3EClick in Edit Mode%3C/text%3E%3C/svg%3E" data-key="ai_shot1" class="editable-img" loading="lazy" alt=""></div>
-      <div class="frame wide"><img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ece7de'/%3E%3Ctext x='50%25' y='50%25' font-size='26' fill='%238b8578' text-anchor='middle' font-family='sans-serif'%3EClick in Edit Mode%3C/text%3E%3C/svg%3E" data-key="ai_shot2" class="editable-img" loading="lazy" alt=""></div>
-    </div>
   </article>
 </div>
-
-<!-- MORE / small projects --><section class="block" id="more">
-  <div class="wrap">
-    <p class="eyebrow" data-edit>Also</p>
-    <h2 class="sec serif" data-edit>그 외 작업</h2>
-    <p class="sec-sub" data-edit>로고·패키지·POP·배너·CRM·룩북·사내 행사 등 브랜드 운영 전반의 자잘한 실무들.</p>
-    <div class="mini-grid">
-      <div class="mini"><div class="ph"><img src="images/parsons_logo.jpg" data-key="parsons_logo" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>PARSONS CI</h4><p data-edit>브랜드 로고·워드마크</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/logo_flatwhite.jpg" data-key="logo_flatwhite" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>Flat White</h4><p data-edit>세컨브랜드 로고</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/logo_handstich.jpg" data-key="logo_handstich" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>Hand Stitch</h4><p data-edit>세컨브랜드 로고</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/logo_gold.jpg" data-key="logo_gold" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>Gold Digger</h4><p data-edit>세컨브랜드 로고</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/sale_banner.jpg" data-key="sale_banner" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 세일 배너</h4><p data-edit>온라인 메인 배너</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/pop_price.jpg" data-key="pop_price" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>매장 POP</h4><p data-edit>Parsons.M 가격표·안내물</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/kakao_stat.jpg" data-key="kakao_stat" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>카카오 채널 운영</h4><p data-edit>CRM 메시지·성과 관리</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/look_5.jpg" data-key="look_5" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 룩북</h4><p data-edit>착장 비주얼 촬영·편집</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/look_8.jpg" data-key="look_8" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 룩북</h4><p data-edit>착장 비주얼 촬영·편집</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/db_105.jpg" data-key="db_105" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>아울렛 시즌 컷</h4><p data-edit>동부산 25FW</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/dp_model1.jpg" data-key="dp_model1" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>상세페이지 모델컷</h4><p data-edit>제품 착장 디렉션</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/sad_broc.jpg" data-key="sad_broc" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>그래픽 아트워크</h4><p data-edit>SAVE A DOG 캐릭터</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/award_invitation.jpg" data-key="award_invitation" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>PARSONS AWARDS</h4><p data-edit>사내 시상식 초대장·포스터</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/award_invitation2.jpg" data-key="award_invitation2" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시상식 브랜딩</h4><p data-edit>상장·명단 판넬 · 4회 진행</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/more_banner.jpg" data-key="more_banner" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 프로모션</h4><p data-edit>브랜드데이 세일 · 매장 현수막</p></div></div>
-      <div class="mini"><div class="ph"><img src="images/more_instagram.jpg" data-key="more_instagram" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>인스타그램 운영</h4><p data-edit>COLOR BY NUMBER 채널·콘텐츠</p></div></div>
-    </div>
-  </div>
-</section>
 
 <!-- SIDE PROJECT · Myquence -->
 <section class="block" id="side">
   <div class="wrap">
-    <p class="eyebrow" data-edit>Side Project</p>
-    <h2 class="sec serif" data-edit>필요해서, 직접 만들었습니다</h2>
-    <p class="sec-sub" data-edit>서비스 기획부터 출시까지 전 과정을 혼자 수행한 첫 서비스 — <b>Myquence</b></p>
+    <p class="eyebrow" data-edit>Key Project 05</p>
+    <h2 class="sec serif" data-edit>Myquence — 아이디어를 실제 서비스로</h2>
+    <p class="sec-sub" data-edit>문제 정의 · 기능 기획 · UI/UX 설계 · 개발 · 배포까지 <b>혼자 전 과정</b>을 밟은 웹 서비스.</p>
 
     <div class="side-grid">
       <div>
-        <p class="side-lead" data-edit>쓰던 할일 앱이 저에게 맞지 않았습니다. <b>캘린더는 완료 개념이 없어</b> 지난주를 봐도
-        한 일인지 못 한 일인지 알 수 없었고, <b>노션·Todoist는 여는 것부터 무거웠습니다.</b>
-        30초 안에 적어야 하는데 그 시간을 앱 여는 데 썼습니다.</p>
-
-        <p data-edit>그래서 <b>날짜 감각과 완료 체크를 한 화면에</b> 두는 앱을 직접 만들었습니다.
-        직장·개인·가족처럼 하루에 뒤섞이는 영역을 색으로 나누고, 월간 달력 위에서 여러 날에 걸친 할일까지 함께 관리합니다.</p>
-
-        <p data-edit>개발자는 아닙니다. <b>바이브 코딩</b>으로 만들었습니다. 대신 <b>요구사항 정의 · 페르소나 · 사용 시나리오 ·
-        차별화 전략 · 화면 설계 · 아키텍처 · 구현 계획</b>을 문서로 먼저 쓰고 들어갔습니다.
-        “무엇을 만들지”를 정하는 일은 결국 사람의 몫이고, 그건 <b>기획하고 운영해 본 사람이 잘하는 일</b>입니다.
-        <b>아이디어를 실제 제품으로 구현</b>하는 과정을 처음부터 끝까지 혼자 밟았습니다.</p>
-
-        <p data-edit>가장 중요한 판단은 <b>이탈 원인이 성취감 부족이 아니라 입력 마찰</b>이라고 본 것이었습니다.
-        그래서 스트릭·포인트·뱃지 같은 보상 장치를 전부 버리고 <b>입력을 3탭·3초로 줄이는 데</b> 예산을 몰았습니다.</p>
+        <div class="p-struct" data-edit>
+          <div class="row"><div class="k">문제</div><p class="v">쓰던 할일 앱이 맞지 않았습니다. <b>캘린더는 완료 개념이 없어</b> 지난주를 봐도 한 일인지 알 수 없었고,
+          <b>노션·Todoist는 여는 것부터 무거웠습니다.</b> 30초 안에 적어야 하는데 그 시간을 앱 여는 데 썼습니다.</p></div>
+          <div class="row"><div class="k">기획</div><p class="v"><b>요구사항 정의 · 페르소나 · 사용 시나리오 · 차별화 전략 · 화면 설계 · 아키텍처 · 구현 계획</b>을
+          문서로 먼저 정리했습니다. 가장 중요한 판단은 <b>이탈 원인이 성취감 부족이 아니라 입력 마찰</b>이라고 본 것이었습니다.</p></div>
+          <div class="row"><div class="k">설계</div><p class="v">스트릭·포인트·뱃지 같은 보상 장치를 전부 버리고 <b>입력을 3탭·3초로 줄이는 데</b> 집중했습니다.
+          날짜 감각과 완료 체크를 한 화면에 두고, 뒤섞이는 영역을 색으로 나눴습니다.</p></div>
+          <div class="row"><div class="k">개발</div><p class="v">개발자는 아닙니다. <b>바이브 코딩</b>으로 구현했습니다.
+          “무엇을 만들지”를 정하는 일은 결국 사람의 몫이고, 그건 <b>기획하고 운영해 본 사람이 잘하는 일</b>입니다.</p></div>
+        </div>
 
         <div class="chips" style="margin-top:14px">
           <span class="chip" data-edit>Next.js</span><span class="chip" data-edit>React</span>
@@ -847,10 +754,98 @@ body.editing .hero-img-btn{display:inline-block}
   </div>
 </section>
 
+<!-- SELECTED WORKS --><section class="block" id="more">
+  <div class="wrap">
+    <p class="eyebrow" data-edit>Selected Works</p>
+    <h2 class="sec serif" data-edit>그 외 작업</h2>
+    <p class="sec-sub" data-edit>브랜드·VMD, 영상, 개별 브랜드 웹, 로고·패키지·배너·CRM 등 13년간의 실무 아카이브.</p>
+
+    <div class="sw">
+      <div class="sw-item">
+        <div class="sw-txt">
+          <h3 data-edit>파슨스 브랜드 &amp; 백화점·아울렛 VMD</h3>
+          <p data-edit>‘Beauty is not enough’ 슬로건 아래 <b>브랜드 키비주얼과 시즌 비주얼</b>을 제작하고 리프레쉬 전략을 기획했습니다.
+          동부산·김포 등 <b>매장 오픈·시즌 행사 VMD</b>를 담당해 온라인 비주얼과 오프라인 매장 경험을 하나의 톤으로 연결했습니다.</p>
+          <p data-edit>2019년부터 4년간 <b>드라마·예능·유튜브 협찬(PPL)</b>을 운영했습니다. tvN 「호텔 델루나」, JTBC 「보좌관」,
+          KBS2 「세상에서 제일 예쁜 내 딸」 등 <b>12편 이상</b>에 협찬하고 품번 단위로 노출을 관리했으며,
+          롯데백화점에 <b>주간·월간 성과 보고서를 정기 제출</b>했습니다.</p>
+          <div class="chips"><span class="chip" data-edit>키비주얼</span><span class="chip" data-edit>매장 VMD</span><span class="chip" data-edit>PPL 협찬</span><span class="chip" data-edit>정기 성과보고</span><span class="chip" data-edit>23개 매장</span></div>
+        </div>
+        <div class="gal g3">
+          <div class="frame tall"><img src="images/parsons_kv.jpg" data-key="parsons_kv" class="editable-img " loading="lazy" alt=""></div>
+          <div class="frame tall"><img src="images/parsons_intro.jpg" data-key="parsons_intro" class="editable-img " loading="lazy" alt=""></div>
+          <div class="frame tall"><img src="images/db_101.jpg" data-key="db_101" class="editable-img " loading="lazy" alt=""></div>
+          <div class="frame tall"><img src="images/db_open.jpg" data-key="db_open" class="editable-img " loading="lazy" alt=""></div>
+          <div class="frame tall"><img src="images/db_look1.jpg" data-key="db_look1" class="editable-img " loading="lazy" alt=""></div>
+          <div class="frame tall"><img src="images/db_look2.jpg" data-key="db_look2" class="editable-img " loading="lazy" alt=""></div>
+        </div>
+      </div>
+
+      <div class="sw-item" id="motion">
+        <div class="sw-txt">
+          <h3 data-edit>매장 영상 · 릴스 편집</h3>
+          <p data-edit>매장 TV와 매장 앞 디스플레이에 상영하는 브랜드 영상을 촬영 소스 정리부터 컷 편집·자막·색보정까지
+          <b>직접 완성</b>하고, <b>같은 소스를 인스타그램 릴스로 재편집</b>해 온·오프라인에 함께 썼습니다.</p>
+          <div class="chips"><span class="chip" data-edit>영상 편집</span><span class="chip" data-edit>매장 송출</span><span class="chip" data-edit>릴스 재편집</span></div>
+        </div>
+        <div class="vgrid">
+          <div class="vcard">
+            <video src="video/vmd_christmas.mp4" poster="video/vmd_christmas.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="vcap" data-edit><b>크리스마스 시즌 영상</b>동부산점 시즌 VMD · 매장 송출</div>
+          </div>
+          <div class="vcard">
+            <video src="video/vmd_tv.mp4" poster="video/vmd_tv.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="vcap" data-edit><b>25FW 신상 티저</b>매장 TV 송출 · 시즌 오프닝</div>
+          </div>
+          <div class="vcard">
+            <video src="video/vmd_pop.mp4" poster="video/vmd_pop.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="vcap" data-edit><b>브랜드 무드 영상</b>매장 앞 디스플레이 DP</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sw-item" id="p-here">
+        <div class="sw-txt">
+          <h3 data-edit>herewhere — 개별 브랜드 웹·상세페이지</h3>
+          <p data-edit>‘봄 햇살처럼 포근하게’를 컨셉으로 한 개별 브랜드의 <b>웹페이지와 상품 상세페이지</b>를 전개했습니다.
+          메인·베스트·전체상품 레이아웃과 제품별 상세페이지를 일관된 톤으로 구성했습니다.</p>
+          <div class="chips"><span class="chip" data-edit>브랜드 웹</span><span class="chip" data-edit>상세페이지</span><span class="chip" data-edit>비주얼 디렉션</span></div>
+        </div>
+        <div class="gal g3">
+          <div class="scroll-shot"><img src="images/here_main.jpg" data-key="here_main" class="editable-img " loading="lazy" alt=""></div>
+          <div class="scroll-shot"><img src="images/here_best.jpg" data-key="here_best" class="editable-img " loading="lazy" alt=""></div>
+          <div class="scroll-shot"><img src="images/here_detail.jpg" data-key="here_detail" class="editable-img " loading="lazy" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sw-mini-head serif" data-edit>로고 · 패키지 · 배너 · CRM · 룩북 · 사내 행사</h3>
+    <div class="mini-grid">
+      <div class="mini"><div class="ph"><img src="images/parsons_logo.jpg" data-key="parsons_logo" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>PARSONS CI</h4><p data-edit>브랜드 로고·워드마크</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/logo_flatwhite.jpg" data-key="logo_flatwhite" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>Flat White</h4><p data-edit>세컨브랜드 로고</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/logo_handstich.jpg" data-key="logo_handstich" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>Hand Stitch</h4><p data-edit>세컨브랜드 로고</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/logo_gold.jpg" data-key="logo_gold" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>Gold Digger</h4><p data-edit>세컨브랜드 로고</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/sale_banner.jpg" data-key="sale_banner" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 세일 배너</h4><p data-edit>온라인 메인 배너</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/pop_price.jpg" data-key="pop_price" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>매장 POP</h4><p data-edit>Parsons.M 가격표·안내물</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/kakao_stat.jpg" data-key="kakao_stat" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>카카오 채널 운영</h4><p data-edit>CRM 메시지·성과 관리</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/look_5.jpg" data-key="look_5" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 룩북</h4><p data-edit>착장 비주얼 촬영·편집</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/look_8.jpg" data-key="look_8" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 룩북</h4><p data-edit>착장 비주얼 촬영·편집</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/db_105.jpg" data-key="db_105" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>아울렛 시즌 컷</h4><p data-edit>동부산 25FW</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/dp_model1.jpg" data-key="dp_model1" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>상세페이지 모델컷</h4><p data-edit>제품 착장 디렉션</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/sad_broc.jpg" data-key="sad_broc" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>그래픽 아트워크</h4><p data-edit>SAVE A DOG 캐릭터</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/award_invitation.jpg" data-key="award_invitation" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>PARSONS AWARDS</h4><p data-edit>사내 시상식 초대장·포스터</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/award_invitation2.jpg" data-key="award_invitation2" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시상식 브랜딩</h4><p data-edit>상장·명단 판넬 · 4회 진행</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/more_banner.jpg" data-key="more_banner" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>시즌 프로모션</h4><p data-edit>브랜드데이 세일 · 매장 현수막</p></div></div>
+      <div class="mini"><div class="ph"><img src="images/more_instagram.jpg" data-key="more_instagram" class="editable-img " loading="lazy" alt=""></div><div class="cap"><h4 data-edit>인스타그램 운영</h4><p data-edit>COLOR BY NUMBER 채널·콘텐츠</p></div></div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="serif" data-edit>Thank you.</div>
-    <div style="font-size:14px" data-edit>파슨스 브랜드 마케팅 &amp; 디자인 · 2013–2026 · 연락처를 여기에 입력하세요</div>
+    <div style="font-size:14px" data-edit>박서현 · 파슨스 브랜드 마케팅 &amp; 디자인 2013–2026<br>
+      <a href="mailto:hyunyyp@daum.net" style="color:inherit;border-bottom:1px solid currentColor;padding-bottom:1px">hyunyyp@daum.net</a></div>
   </div>
 </footer>
 </div><!--/page-portfolio-->
