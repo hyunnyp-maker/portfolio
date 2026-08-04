@@ -107,8 +107,10 @@ h3.p-title{font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.6vw,36px);ma
 .frame{border-radius:10px;overflow:hidden}
 .tall img{aspect-ratio:3/4;object-fit:cover}
 .wide img{aspect-ratio:4/3;object-fit:cover}
+.square img{aspect-ratio:1/1;object-fit:cover}
+.pano img{aspect-ratio:16/9;object-fit:cover}
 .scroll-shot{max-height:520px;overflow:hidden;position:relative;border:1px solid var(--line);border-radius:10px;background:var(--card)}
-.scroll-shot img{border:0;border-radius:0}
+.scroll-shot img{border:0;border-radius:0;width:100%;display:block}
 .scroll-shot::after{content:'스크롤 페이지 ▾';position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:11px;color:#fff;
   background:linear-gradient(transparent,rgba(0,0,0,.55));padding:22px 0 8px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
@@ -537,10 +539,10 @@ body.editing .hero-img-btn{display:inline-block}
     <p class="p-role" data-edit><b>역할</b> 브랜드 기획 · 아티스트 협업 그래픽 · 글로벌 마켓 런칭 · 상표 등록 &nbsp;|&nbsp; <b>기간</b> 2023–2026</p>
     <div class="p-body">
       <div class="gal g2">
-        <div class="frame wide"><img src="images/sad_disco.jpg" data-key="sad_disco" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame wide"><img src="images/sad_rella.jpg" data-key="sad_rella" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame wide"><img src="images/sad_broc.jpg" data-key="sad_broc" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame wide"><img src="images/sad_hughub.jpg" data-key="sad_hughub" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame square"><img src="images/sad_disco.jpg" data-key="sad_disco" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame square"><img src="images/sad_rella.jpg" data-key="sad_rella" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame square"><img src="images/sad_broc.jpg" data-key="sad_broc" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame square"><img src="images/sad_hughub.jpg" data-key="sad_hughub" class="editable-img " loading="lazy" alt=""></div>
       </div>
       <div>
         <p data-edit>작가(존 보이드 등)와 협업한 캐릭터·그래픽을 중심으로 한 브랜드를 기획하고, 국내를 넘어
@@ -552,8 +554,8 @@ body.editing .hero-img-btn{display:inline-block}
       </div>
     </div>
     <div class="gal g2 feature-full">
-      <div class="frame wide"><img src="images/sad_save.jpg" data-key="sad_save" class="editable-img " loading="lazy" alt=""></div>
-      <div class="frame wide"><img src="images/sad_broc1.jpg" data-key="sad_broc1" class="editable-img " loading="lazy" alt=""></div>
+      <div class="frame square"><img src="images/sad_save.jpg" data-key="sad_save" class="editable-img " loading="lazy" alt=""></div>
+      <div class="frame square"><img src="images/sad_broc1.jpg" data-key="sad_broc1" class="editable-img " loading="lazy" alt=""></div>
     </div>
   </article>
 
@@ -589,8 +591,8 @@ body.editing .hero-img-btn{display:inline-block}
         <div class="chips"><span class="chip" data-edit>모델컷+디테일컷</span><span class="chip" data-edit>대량 제작</span><span class="chip" data-edit>업로드 규격화</span></div>
       </div>
       <div class="gal g2">
-        <div class="frame tall"><img src="images/pm_1.jpg" data-key="pm_1" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame tall"><img src="images/pm_16.jpg" data-key="pm_16" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame pano"><img src="images/pm_1.jpg" data-key="pm_1" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame pano"><img src="images/pm_16.jpg" data-key="pm_16" class="editable-img " loading="lazy" alt=""></div>
       </div>
     </div>
     <div class="gal g3" style="margin-top:18px">
@@ -609,8 +611,8 @@ body.editing .hero-img-btn{display:inline-block}
       <div class="gal g2">
         <div class="frame tall"><img src="images/parsons_kv.jpg" data-key="parsons_kv" class="editable-img " loading="lazy" alt=""></div>
         <div class="frame tall"><img src="images/parsons_intro.jpg" data-key="parsons_intro" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame wide"><img src="images/db_101.jpg" data-key="db_101" class="editable-img " loading="lazy" alt=""></div>
-        <div class="frame wide"><img src="images/db_105.jpg" data-key="db_105" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame tall"><img src="images/db_101.jpg" data-key="db_101" class="editable-img " loading="lazy" alt=""></div>
+        <div class="frame tall"><img src="images/db_105.jpg" data-key="db_105" class="editable-img " loading="lazy" alt=""></div>
       </div>
       <div>
         <p data-edit>‘Beauty is not enough’ 슬로건 아래 파슨스의 <b>브랜드 키비주얼과 시즌 컬렉션 비주얼</b>을 제작하고,
@@ -622,9 +624,10 @@ body.editing .hero-img-btn{display:inline-block}
         <div class="chips"><span class="chip" data-edit>키비주얼</span><span class="chip" data-edit>브랜드 리프레쉬</span><span class="chip" data-edit>매장 오픈 행사</span><span class="chip" data-edit>PPL 협찬</span><span class="chip" data-edit>스타마케팅</span><span class="chip" data-edit>정기 성과보고</span><span class="chip" data-edit>옴니채널</span></div>
       </div>
     </div>
-    <div class="gal g2 feature-full">
-      <div class="frame wide"><img src="images/db_open.jpg" data-key="db_open" class="editable-img " loading="lazy" alt=""></div>
-      <div class="frame wide"><img src="images/pm_13.jpg" data-key="pm_13" class="editable-img " loading="lazy" alt=""></div>
+    <div class="gal g3 feature-full">
+      <div class="frame tall"><img src="images/db_open.jpg" data-key="db_open" class="editable-img " loading="lazy" alt=""></div>
+      <div class="frame tall"><img src="images/db_look1.jpg" data-key="db_look1" class="editable-img " loading="lazy" alt=""></div>
+      <div class="frame tall"><img src="images/db_look2.jpg" data-key="db_look2" class="editable-img " loading="lazy" alt=""></div>
     </div>
   </article>
 
