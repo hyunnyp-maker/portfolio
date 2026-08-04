@@ -122,13 +122,16 @@ h3.p-title{font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.6vw,36px);ma
 .proof-cap{margin:12px 2px 0;font-size:13.5px;color:var(--ink2);line-height:1.75}
 .proof-cap b{color:var(--ink)}
 /* side project · Myquence */
-.side-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start;margin-top:26px}
+.side-grid{margin-top:26px}
 .side-grid p{font-size:15px;color:var(--ink2);line-height:1.85;margin:0 0 14px}
 .side-grid p b{color:var(--ink)}
 .side-lead{font-size:16.5px}
-.side-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.side-shots .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.side-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.side-shots .frame{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
 .side-shots img{width:100%;aspect-ratio:375/667;object-fit:cover;display:block;border:0;border-radius:0}
+.side-shots figcaption{padding:11px 14px;font-size:12.5px;color:var(--ink2);
+  border-top:1px solid var(--line);line-height:1.6}
+@media(max-width:760px){.side-shots{grid-template-columns:1fr}}
 .side-cta{margin-top:20px;padding:16px 18px;background:var(--card);border:1px solid var(--line);
   border-left:4px solid var(--gold);border-radius:10px}
 .side-link{display:inline-block;font-weight:700;font-size:14.5px;color:var(--gold-d);text-decoration:none}
@@ -825,12 +828,15 @@ body.editing .hero-img-btn{display:inline-block}
           <p class="side-note" data-edit>웹으로 배포해 <b>실제로 매일 쓰고 있으며</b>, 다음 단계로 <b>앱스토어 · 플레이스토어 출시</b>를 준비 중입니다.</p>
         </div>
       </div>
+    </div>
 
-      <div class="side-shots">
-        <div class="frame"><img src="images/mq_light.png" data-key="mq_light" class="editable-img" loading="lazy" alt="Myquence 달력 화면"></div>
-        <div class="frame"><img src="images/mq_palette.png" data-key="mq_palette" class="editable-img" loading="lazy" alt="Myquence 카테고리 색 팔레트"></div>
-        <div class="frame"><img src="images/mq_dark.png" data-key="mq_dark" class="editable-img" loading="lazy" alt="Myquence 다크 모드"></div>
-      </div>
+    <div class="side-shots">
+      <figure class="frame"><img src="images/mq_light.png" data-key="mq_light" class="editable-img" loading="lazy" alt="Myquence 달력 화면">
+        <figcaption data-edit>달력과 오늘 리스트를 한 화면에 · 카테고리 색으로 구분</figcaption></figure>
+      <figure class="frame"><img src="images/mq_palette.png" data-key="mq_palette" class="editable-img" loading="lazy" alt="Myquence 카테고리 색 팔레트">
+        <figcaption data-edit>컬러 심리 차트에서 뽑은 9색 팔레트 · 탭 즉시 반영</figcaption></figure>
+      <figure class="frame"><img src="images/mq_dark.png" data-key="mq_dark" class="editable-img" loading="lazy" alt="Myquence 다크 모드">
+        <figcaption data-edit>다크 모드 · 반복 일정은 달력에 막대로 표시</figcaption></figure>
     </div>
   </div>
 </section>
